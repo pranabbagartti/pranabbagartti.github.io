@@ -1,14 +1,8 @@
----
-layout: default
-title: Home
----
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <!-- Basic Page Needs kjh
-–––––––––––––––––––––––––––––––---->
+  <!-- Basic Page Needs -->
   <meta charset="utf-8">
   <meta name="google-site-verification" content="QS8wI8duE4RXdB1g6Iw0mKfdHi1KeurY8HCg60Ax2DI" />
   <title>Pranab Bagartti's home page</title>
@@ -22,39 +16,44 @@ title: Home
   <meta name="author" content= "Bagartti">
   <meta name="author" content= "Pranab Bagartti">
 
-  <!-- Mobile Specific Metass
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Mobile Specific Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- FONT -->
   <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- CSS -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/style.css">
 
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Favicon -->
   <link rel="icon" type="image/jpg" href="images/iitd.png">
 </head>
-
-<STYLE>A {text-decoration: none;} </STYLE>
 
 <body>
 
 <!-- Navigation Menu -->
-{% include navigation.html %}
+<nav class="navbar">
+  <div class="container">
+    <ul class="navbar-list">
+      <li class="navbar-item"><a class="navbar-link active" href="index.html">Home</a></li>
+      <li class="navbar-item"><a class="navbar-link" href="research.html">Research</a></li>
+      <li class="navbar-item"><a class="navbar-link" href="publications.html">Publications</a></li>
+      <li class="navbar-item"><a class="navbar-link" href="teaching.html">Teaching</a></li>
+      <li class="navbar-item"><a class="navbar-link" href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
 <section class="about">
-  <div class="container", align="left">
+  <div class="container">
 
     <h3> Pranab <strong style="color:DarkSlateBlue">Bagartti</strong></h3>
 
     <div class="row">
         <div class="one-half column">
-            <img src="images/DSC_5388.JPG", align="centre",  height="310">
+            <img src="images/DSC_5388.JPG" class="profile-image" height="310">
             <br><br>
         </div>
         <div class="one-half column">
@@ -72,28 +71,28 @@ title: Home
 </section>
 
 <section class="about">
-  <div class="container", align="centre">
+  <div class="container">
     <div class="row">
       <div class="one-half column">
         <strong>About:</strong> <br>
-        <h8>
+        <div class="content-text">
           I am Pranab Bagartti, a fourth-year Ph.D. candidate at
-           <a href="#" onClick="MyWindow=window.open('https://home.iitd.ac.in/','MyWindow','width=600,height=700'); return false;">Indian Institute of Technology Delhi</a>.
-          I belong to the <a href="#" onClick="MyWindow=window.open('https://sites.google.com/view/iit-delhi-linguistics/home','MyWindow','width=600,height=700'); return false;">Linguistics unit</a> in the department of Humanities and Social Sciences.
-          I am working with <a href="#" onClick="MyWindow=window.open('https://web.iitd.ac.in/~samar/','MyWindow','width=600,height=700'); return false;">Prof. Samar Husain</a> 
-          (<a href="#" onClick="MyWindow=window.open('https://web.iitd.ac.in/~samar/lab.html','MyWindow','width=600,height=700'); return false;"><em style="color:DarkSlateBlue">lab link</em></a>).
+           <a href="https://home.iitd.ac.in/" target="_blank">Indian Institute of Technology Delhi</a>.
+          I belong to the <a href="https://sites.google.com/view/iit-delhi-linguistics/home" target="_blank">Linguistics unit</a> in the department of Humanities and Social Sciences.
+          I am working with <a href="https://web.iitd.ac.in/~samar/" target="_blank">Prof. Samar Husain</a> 
+          (<a href="https://web.iitd.ac.in/~samar/lab.html" target="_blank"><em style="color:DarkSlateBlue">lab link</em></a>).
           Broadly, I am interested in understanding the underlying mechanisms of sentence processing through behavioural experiments. Currently, I am working on agreement attraction errors in Hindi for the same.
-        </h8>
+        </div>
       </div>
       <div class="one-half column">
         <strong>Academic Background:</strong>
-        <h6>
+        <div class="content-text">
           <ul>
             <li>BA Language Sciences (2018, University of Hyderabad)</li>
             <li>MA Linguistics (2020, University of Delhi)</li>
             <li>Ph.D. Linguistics (Ongoing, Indian Institute of Technology Delhi)</li>
           </ul>
-        </h6>
+        </div>
       </div>
     </div>
   </div>
@@ -101,9 +100,9 @@ title: Home
 </section>
 
 <section class="conferences">
-  <div class="container", align="centre">
+  <div class="container">
     <strong>Conference Presentations:</strong>
-    <h8>
+    <div class="content-text">
      <ul> 
       <li>
         Interaction of language-specific and cross-linguistic strategies during agreement computation - Evidence from Hindi (with Samar Husain). In Proceedings of the Annual Meeting of the Cognitive Science Society, 47. 2025. (to appear)
@@ -121,7 +120,7 @@ title: Home
         Different underlying mechanisms lead to agreement attraction in production- Evidence from Hindi (with Samar Husain). The South Asian Forum on the Acquisition and Processing of Language, Indian Institute of Technology, Kanpur, India. December 2023. [Talk]
       </li>
      </ul>
-    </h8>
+    </div>
   </div>
 </section>
 
