@@ -1,0 +1,192 @@
+/* Custom styles for minimal theme */
+
+/* Navigation */
+.navbar {
+  background-color: #fff;
+  border-bottom: 1px solid #E1E1E1;
+  margin-bottom: 3rem;
+  padding: 1rem 0;
+}
+
+.navbar-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-item {
+  margin: 0 1.5rem;
+}
+
+.navbar-link {
+  color: #222;
+  text-decoration: none;
+  font-weight: 400;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: #1EAEDB;
+  background-color: #f8f9fa;
+}
+
+.navbar-link.active {
+  color: #1EAEDB;
+  font-weight: 600;
+}
+
+/* General improvements */
+body {
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.container {
+  max-width: 960px;
+}
+
+/* Typography */
+h3 {
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+  color: #222;
+}
+
+h4 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+h6 {
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+/* Content styling */
+.content-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.content-text p {
+  margin-bottom: 1.5rem;
+}
+
+.content-text ul {
+  margin-bottom: 1.5rem;
+}
+
+.content-text li {
+  margin-bottom: 0.8rem;
+}
+
+/* Sections */
+.about, .conferences, .content {
+  margin-bottom: 3rem;
+}
+
+.research-area, .publication-section, .teaching-section, .contact-section {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #E1E1E1;
+}
+
+.research-area:last-child, 
+.publication-section:last-child, 
+.teaching-section:last-child, 
+.contact-section:last-child {
+  border-bottom: none;
+}
+
+/* Profile image */
+.profile-image {
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Links */
+a {
+  color: #1EAEDB;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0FA0CE;
+  text-decoration: underline;
+}
+
+/* Publication list */
+.publication-list {
+  list-style: none;
+  padding: 0;
+}
+
+.publication-list li {
+  margin-bottom: 2rem;
+  padding-left: 0;
+  border-left: 3px solid #1EAEDB;
+  padding-left: 1.5rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .navbar-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .navbar-item {
+    margin: 0.5rem 0;
+  }
+  
+  .navbar {
+    padding: 0.5rem 0;
+  }
+  
+  h3 {
+    font-size: 2rem;
+  }
+  
+  h4 {
+    font-size: 1.5rem;
+  }
+  
+  .content-text {
+    font-size: 1rem;
+  }
+  
+  .profile-image {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Additional spacing and visual improvements */
+strong {
+  font-weight: 600;
+}
+
+em {
+  font-style: italic;
+}
+
+/* Clean layout adjustments */
+.row {
+  margin-bottom: 2rem;
+}
+
+.one-half.column {
+  margin-bottom: 2rem;
+}
+
+/* Footer spacing */
+section:last-child {
+  margin-bottom: 4rem;
+}
