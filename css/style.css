@@ -190,3 +190,16 @@ em {
 section:last-child {
   margin-bottom: 4rem;
 }
+
+/* mobile layout */
+@media (max-width: 768px) {
+    .bio-section {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .bio-image {
+        align-self: center;
+    }
+   .social-icons {
+     left: 5%;
+}
