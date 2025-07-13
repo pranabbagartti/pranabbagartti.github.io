@@ -1,11 +1,30 @@
-/* Custom styles for minimal theme */
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+}
 
-/* Navigation */
+body {
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Navigation - Mobile First */
 .navbar {
   background-color: #fff;
   border-bottom: 1px solid #E1E1E1;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .navbar-list {
@@ -13,113 +32,160 @@
   margin: 0;
   padding: 0;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 0.5rem;
 }
 
 .navbar-item {
-  margin: 0 1.5rem;
+  margin: 0.25rem;
 }
 
 .navbar-link {
   color: #222;
   text-decoration: none;
-  font-weight: 400;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
   transition: all 0.3s ease;
+  display: block;
+  font-size: 0.9rem;
+  min-width: 80px;
+  text-align: center;
 }
 
 .navbar-link:hover {
   color: #1EAEDB;
   background-color: #f8f9fa;
+  transform: translateY(-1px);
 }
 
 .navbar-link.active {
-  color: #1EAEDB;
+  color: #fff;
+  background-color: #1EAEDB;
   font-weight: 600;
 }
 
-/* General improvements */
-body {
-  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
+/* Typography - Mobile First */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
 }
 
-.container {
-  max-width: 960px;
-}
-
-/* Typography */
-h3 {
-  font-size: 2.4rem;
-  margin-bottom: 2rem;
+h1 {
+  font-size: 2.2rem;
   color: #222;
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+  color: #222;
+  margin-bottom: 1.5rem;
 }
 
 h4 {
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
   color: #333;
+  margin-bottom: 1rem;
 }
 
 h6 {
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 1.4;
+  color: #666;
+  margin-bottom: 0.5rem;
 }
 
-/* Content styling */
+/* Profile Section */
+.profile-section {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.profile-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  border: 4px solid #fff;
+}
+
+.profile-info h1 {
+  margin-bottom: 0.5rem;
+  color: #1EAEDB;
+}
+
+.profile-info h6 {
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.profile-info p {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0.25rem 0;
+}
+
+/* Content sections */
+.content-section {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
 .content-text {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #444;
 }
 
 .content-text p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
 }
 
 .content-text ul {
   margin-bottom: 1.5rem;
+  padding-left: 1.2rem;
 }
 
 .content-text li {
   margin-bottom: 0.8rem;
+  line-height: 1.6;
 }
 
-/* Sections */
-.about, .conferences, .content {
-  margin-bottom: 3rem;
-}
-
-.research-area, .publication-section, .teaching-section, .contact-section {
-  margin-bottom: 3rem;
-  padding-bottom: 2rem;
+/* Academic sections */
+.academic-section {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
   border-bottom: 1px solid #E1E1E1;
 }
 
-.research-area:last-child, 
-.publication-section:last-child, 
-.teaching-section:last-child, 
-.contact-section:last-child {
+.academic-section:last-child {
   border-bottom: none;
+  margin-bottom: 0;
 }
 
-/* Profile image */
-.profile-image {
-  border-radius: 4px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-/* Links */
-a {
+.academic-section h4 {
   color: #1EAEDB;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #0FA0CE;
-  text-decoration: underline;
+  border-bottom: 2px solid #1EAEDB;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 /* Publication list */
@@ -129,77 +195,196 @@ a:hover {
 }
 
 .publication-list li {
-  margin-bottom: 2rem;
-  padding-left: 0;
-  border-left: 3px solid #1EAEDB;
-  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border-left: 4px solid #1EAEDB;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-  .navbar-list {
-    flex-direction: column;
-    align-items: center;
+/* Links */
+a {
+  color: #1EAEDB;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #0FA0CE;
+  text-decoration: underline;
+}
+
+/* Utility classes */
+.text-center { text-align: center; }
+.text-muted { color: #666; }
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+
+/* Responsive - Tablet */
+@media (min-width: 768px) {
+  .container {
+    padding: 0 30px;
   }
   
-  .navbar-item {
-    margin: 0.5rem 0;
-  }
-  
-  .navbar {
-    padding: 0.5rem 0;
-  }
-  
-  h3 {
-    font-size: 2rem;
-  }
-  
-  h4 {
-    font-size: 1.5rem;
-  }
-  
-  .content-text {
-    font-size: 1rem;
+  .profile-header {
+    flex-direction: row;
+    text-align: left;
+    align-items: flex-start;
   }
   
   .profile-image {
-    width: 100%;
-    height: auto;
+    width: 200px;
+    height: 200px;
+  }
+  
+  .profile-info {
+    flex: 1;
+  }
+  
+  h1 {
+    font-size: 2.6rem;
+  }
+  
+  h3 {
+    font-size: 2.2rem;
+  }
+  
+  h4 {
+    font-size: 1.6rem;
+  }
+  
+  .content-text {
+    font-size: 1.1rem;
+  }
+  
+  .navbar-list {
+    gap: 1rem;
+  }
+  
+  .navbar-link {
+    font-size: 1rem;
+    padding: 0.8rem 1.2rem;
   }
 }
 
-/* Additional spacing and visual improvements */
-strong {
-  font-weight: 600;
+/* Responsive - Desktop */
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 40px;
+  }
+  
+  .profile-section {
+    padding: 3rem;
+  }
+  
+  .content-section {
+    padding: 3rem;
+  }
+  
+  .profile-header {
+    gap: 2rem;
+  }
+  
+  .profile-image {
+    width: 220px;
+    height: 220px;
+  }
+  
+  h1 {
+    font-size: 3rem;
+  }
+  
+  h3 {
+    font-size: 2.4rem;
+  }
+  
+  h4 {
+    font-size: 1.8rem;
+  }
+  
+  .content-text {
+    font-size: 1.15rem;
+  }
+  
+  .navbar {
+    padding: 1.5rem 0;
+  }
+  
+  .navbar-list {
+    gap: 1.5rem;
+  }
+  
+  .navbar-item {
+    margin: 0;
+  }
 }
 
-em {
-  font-style: italic;
+/* Additional mobile optimizations */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+  
+  .profile-section,
+  .content-section {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .profile-image {
+    width: 150px;
+    height: 150px;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  h3 {
+    font-size: 1.6rem;
+  }
+  
+  h4 {
+    font-size: 1.3rem;
+  }
+  
+  .navbar-link {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.85rem;
+  }
+  
+  .publication-list li {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
 }
 
-/* Clean layout adjustments */
-.row {
-  margin-bottom: 2rem;
+/* Animation and interactions */
+.content-section,
+.profile-section {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.one-half.column {
-  margin-bottom: 2rem;
+.content-section:hover,
+.profile-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
 
-/* Footer spacing */
-section:last-child {
-  margin-bottom: 4rem;
+/* Focus states for accessibility */
+.navbar-link:focus,
+a:focus {
+  outline: 2px solid #1EAEDB;
+  outline-offset: 2px;
 }
 
-/* mobile layout */
-@media (max-width: 768px) {
-    .bio-section {
-        flex-direction: column;
-        gap: 30px;
-    }
-    .bio-image {
-        align-self: center;
-    }
-   .social-icons {
-     left: 5%;
+/* Print styles */
+@media print {
+  .navbar { display: none; }
+  .content-section, .profile-section {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
 }
