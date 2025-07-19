@@ -29,7 +29,17 @@
   
   <style>
     /* Center the page title in the navigation */
+    .navbar .container {
+      text-align: center;
+    }
+    
     .navbar h3 {
+      text-align: center;
+      margin: 0 auto;
+      display: inline-block;
+    }
+    
+    .navbar-list {
       text-align: center;
       margin: 0 auto;
     }
@@ -37,11 +47,21 @@
     /* Center the profile image */
     .profile-image-container {
       text-align: center;
+      width: 100%;
     }
     
     .profile-image {
       display: block;
       margin: 0 auto;
+    }
+    
+    /* Override any existing flex or positioning that might interfere */
+    .container {
+      text-align: center;
+    }
+    
+    .row {
+      text-align: center;
     }
   </style>
 
@@ -53,9 +73,11 @@
 
 <!-- Navigation Menu -->
 <nav class="navbar">
-  <div class="container">
-    <h3> Pranab <strong style="color:DarkSlateBlue">Bagartti</strong></h3>
-    <ul class="navbar-list">
+  <div class="container" style="text-align: center;">
+    <div style="text-align: center;">
+      <h3 style="text-align: center; margin: 0 auto; display: inline-block;"> Pranab <strong style="color:DarkSlateBlue">Bagartti</strong></h3>
+    </div>
+    <ul class="navbar-list" style="text-align: center; justify-content: center;">
       <li class="navbar-item"><a class="navbar-link active" href="index.html">Home</a></li>
       <li class="navbar-item"><a class="navbar-link" href="resources.html">Resources</a></li>
     </ul>
