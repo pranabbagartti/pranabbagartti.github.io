@@ -28,20 +28,28 @@
   <link rel="stylesheet" href="css/style.css">
   
   <style>
-    /* Center the page title in the navigation */
+    /* Header layout with name on left and nav on right */
     .navbar .container {
-      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
     }
     
     .navbar h3 {
-      text-align: center;
-      margin: 0 auto;
-      display: inline-block;
+      margin: 0;
+      text-align: left;
     }
     
     .navbar-list {
-      text-align: center;
-      margin: 0 auto;
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .navbar-item {
+      margin-left: 20px;
     }
     
     /* Center the profile image */
@@ -54,15 +62,6 @@
       display: block;
       margin: 0 auto;
     }
-    
-    /* Override any existing flex or positioning that might interfere */
-    .container {
-      text-align: center;
-    }
-    
-    .row {
-      text-align: center;
-    }
   </style>
 
   <!-- Favicon -->
@@ -73,11 +72,9 @@
 
 <!-- Navigation Menu -->
 <nav class="navbar">
-  <div class="container" style="text-align: center;">
-    <div style="text-align: center;">
-      <h3 style="text-align: center; margin: 0 auto; display: inline-block;"> Pranab <strong style="color:DarkSlateBlue">Bagartti</strong></h3>
-    </div>
-    <ul class="navbar-list" style="text-align: center; justify-content: center;">
+  <div class="container">
+    <h3>Pranab <strong style="color:DarkSlateBlue">Bagartti</strong></h3>
+    <ul class="navbar-list">
       <li class="navbar-item"><a class="navbar-link active" href="index.html">Home</a></li>
       <li class="navbar-item"><a class="navbar-link" href="resources.html">Resources</a></li>
     </ul>
