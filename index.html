@@ -1,141 +1,354 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <!-- Basic Page Needs-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pranab Bagartti | Ph.D. Scholar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-  
-  <meta charset="utf-8">
-  <meta name="google-site-verification" content="QS8wI8duE4RXdB1g6Iw0mKfdHi1KeurY8HCg60Ax2DI" />
-  <title>Pranab Bagartti's home page</title>
-  <meta name="description" content="pranab bagartti's website">
-  <meta name="tagline" content="linguist">
+    <style>
+        /* --- Global Variables & Reset --- */
+        :root {
+            --primary-color: #2c3e50; /* Dark Slate Blue */
+            --accent-color: #3498db;  /* Bright Blue */
+            --bg-color: #fdfdfd;      /* Off-white */
+            --text-color: #333;
+            --light-gray: #ecf0f1;
+            --max-width: 900px;
+        }
 
-  <meta name="author" content= "pranab">
-  <meta name="author" content= "bagartti">
-  <meta name="author" content= "pranab bagartti">
-  <meta name="author" content= "Pranab">
-  <meta name="author" content= "Bagartti">
-  <meta name="author" content= "Pranab Bagartti">
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-  <!-- Mobile Specific Metas ---->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
 
-  <!-- FONT -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+        h1, h2, h3 {
+            font-family: 'Merriweather', serif;
+            color: var(--primary-color);
+            margin-bottom: 0.5em;
+        }
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
-  <link rel="stylesheet" href="css/style.css">
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
 
-  <!-- Favicon --->
-  <link rel="icon" type="image/jpg" href="images/iitd.png">
+        a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .nav-links a {
+            margin-left: 20px;
+            font-size: 0.95rem;
+            color: #555;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 60px 0;
+            display: flex;
+            align-items: flex-start; /* Aligns top */
+            gap: 40px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .hero-text {
+            flex: 2;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 5px;
+        }
+
+        .social-icons a {
+            margin-right: 15px;
+            font-size: 1.2rem;
+            color: #555;
+        }
+        
+        .social-icons a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Profile Image Styling */
+        .hero-img {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-img img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%; /* Makes it circular */
+            border: 3px solid white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* --- Sections Generic --- */
+        section {
+            padding: 40px 0;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--light-gray);
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            display: inline-block;
+        }
+
+        /* --- Academic Timeline --- */
+        .timeline-item {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .year {
+            min-width: 140px;
+            font-weight: 700;
+            color: #7f8c8d;
+        }
+
+        .details h4 {
+            margin-bottom: 2px;
+            font-family: 'Open Sans', sans-serif;
+            color: var(--primary-color);
+        }
+
+        .details span {
+            font-style: italic;
+            color: #666;
+        }
+
+        /* --- Publications --- */
+        .pub-item {
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 3px solid var(--light-gray);
+        }
+
+        .pub-title {
+            font-weight: 600;
+            color: #222;
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--light-gray);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+            color: #555;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            font-size: 0.85rem;
+            color: #888;
+            background-color: #f9f9f9;
+            margin-top: 40px;
+            border-top: 1px solid #eee;
+        }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column-reverse; /* Image on top on mobile */
+                align-items: center;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+            }
+            
+            .year {
+                margin-bottom: 5px;
+                color: var(--accent-color);
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- Navigation Menu -->
-<nav class="navbar">
-  <div class="container">
-    <ul class="navbar-list">
-      <li class="navbar-item"><a class="navbar-link active" href="index.html">Home</a></li>
-      <li class="navbar-item"><a class="navbar-link" href="resources.html">Resources</a></li>
-    </ul>
-  </div>
-</nav>
-
-<section class="about">
-  <div class="container">
-
-    <h3> Pranab <strong style="color:DarkSlateBlue">Bagartti</strong></h3>
-
-    <div class="row">
-        <div class="one-half column">
-            <img src="images/2025 (1).jpg" class="profile-image" height="310">
-            <br><br>
+    <nav>
+        <div class="container">
+            <div class="logo">Pranab Bagartti</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#education">Education</a>
+                <a href="#research">Research</a>
+            </div>
         </div>
-        <div class="one-half column">
-            <h6>
-              <br>
-                Ph.D. Scholar<br> 
-                Dept. of Humanities and Social Sciences<br> 
-                Indian Institute of Technology Delhi<br> 
-                110016 Delhi, India<br>
-                Email: pranab [dot] bagartti [at] hss [dot] iitd [dot] ac [dot] in
-              </h6>
-        </div>
-    </div>
-  </div>
-</section>
+    </nav>
 
-<section class="about">
-  <div class="container">
-    <div class="row">
-      <div class="one-half column">
-        <strong>About:</strong> <br>
-        <div class="content-text">
-          I am Pranab Bagartti, a Ph.D. candidate at
-           <a href="https://home.iitd.ac.in/" target="_blank">Indian Institute of Technology Delhi</a>.
-          I belong to the <a href="https://sites.google.com/view/iit-delhi-linguistics/home" target="_blank">Linguistics unit</a> in the department of Humanities and Social Sciences.
-          I am working with <a href="https://web.iitd.ac.in/~samar/" target="_blank">Prof. Samar Husain</a> 
-          (<a href="https://web.iitd.ac.in/~samar/lab.html" target="_blank"><em style="color:DarkSlateBlue">lab link</em></a>).
-          Broadly, I am interested in understanding the underlying mechanisms of sentence processing through behavioural experiments. Currently, I am working on agreement attraction errors in Hindi for the same.
-        </div>
-      </div>
-      <div class="one-half column">
-        <strong>Academic Background:</strong>
-        <div class="content-text">
-          <ul>
-            <li>BA Language Sciences (2018, University of Hyderabad)</li>
-            <li>MA Linguistics (2020, University of Delhi)</li>
-            <li>Ph.D. Linguistics (Ongoing, Indian Institute of Technology Delhi)</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <br>
-</section>
+    <div class="container">
+        <header class="hero">
+            <div class="hero-text">
+                <h1>Pranab Bagartti</h1>
+                <div class="hero-subtitle">Ph.D. Scholar, Linguistics</div>
+                
+                <div class="contact-info">
+                    <p><i class="fas fa-university"></i> Dept. of Humanities and Social Sciences, IIT Delhi</p>
+                    <p><i class="fas fa-map-marker-alt"></i> New Delhi, India - 110016</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:pranab.bagartti@hss.iitd.ac.in">pranab.bagartti [at] hss.iitd.ac.in</a></p>
+                </div>
+            </div>
 
-<section class="Publications">
-  <div class="container">
-    <strong>Publications:</strong>
-    <div class="content-text">
-     <ul> 
-      <li>
-        Interaction of language-specific and cross-linguistic strategies during agreement computation - Evidence from Hindi (with Samar Husain). In Proceedings of the Annual Meeting of the Cognitive Science Society, 47. 2025. (<a href="https://escholarship.org/uc/item/2jm7w7p8" target="_blank">link</a>)
-      </li>
-    
-     </ul>
+            <div class="hero-img">
+                <img src="images/2025 (1).jpg" alt="Pranab Bagartti">
+            </div>
+        </header>
     </div>
-  </div>
-</section>
-  
-<section class="conferences">
-  <div class="container">
-    <strong>Conference Presentations:</strong>
-    <div class="content-text">
-     <ul> 
-      <li>
-        Interaction of language-specific and cross-linguistic strategies during agreement computation - Evidence from Hindi (with Samar Husain). In Proceedings of the Annual Meeting of the Cognitive Science Society, 47. 2025. (to appear)
-      </li>
-      <li>
-        Does the number of noun feature mismatch impact Hindi agreement production errors? (with Samar Husain). Architecture and Mechanisms for Language Processing, University of Edinburgh, Scotland. September 2024. [Poster]
-      </li>
-      <li>
-        The role of language-specific and cross-linguistic constraints during Hindi agreement production (with Samar Husain). Architecture and Mechanisms for Language Processing, University of Edinburgh, Scotland. September 2024. [Poster] 
-      </li>
-      <li> 
-        The role of language-specific and universal constraints on agreement processing in Hindi production. (with Samar Husain). Crosslinguistic Perspectives on Processing and Learning Workshop, Universität Zürich, Zurich, Switzerland. September 2024. [Talk]
-      </li> 
-      <li>
-        Different underlying mechanisms lead to agreement attraction in production- Evidence from Hindi (with Samar Husain). The South Asian Forum on the Acquisition and Processing of Language, Indian Institute of Technology, Kanpur, India. December 2023. [Talk]
-      </li>
-     </ul>
+
+    <div class="container">
+        
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <p>
+                I am a Ph.D. candidate in the Linguistics unit at the <strong>Indian Institute of Technology (IIT) Delhi</strong>, working under the supervision of 
+                <a href="#">Prof. Samar Husain</a>. 
+            </p>
+            <br>
+            <p>
+                My research interests lie broadly in understanding the underlying mechanisms of <strong>sentence processing</strong>. 
+                Currently, I am investigating <strong>agreement attraction errors</strong> in Hindi through behavioural experiments to understand how language-specific and cross-linguistic strategies interact during processing.
+            </p>
+        </section>
+
+        <section id="education">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="timeline-item">
+                <div class="year">Ongoing</div>
+                <div class="details">
+                    <h4>Ph.D. in Linguistics</h4>
+                    <span>Indian Institute of Technology Delhi</span>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="year">2020</div>
+                <div class="details">
+                    <h4>MA Linguistics</h4>
+                    <span>University of Delhi</span>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="year">2018</div>
+                <div class="details">
+                    <h4>BA Language Sciences</h4>
+                    <span>University of Hyderabad</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="research">
+            <h2 class="section-title">Publications & Presentations</h2>
+            
+            <h3 style="font-size: 1.2rem; margin-top: 20px;">Journal & Proceedings</h3>
+            
+            <div class="pub-item">
+                <div class="pub-title">Interaction of language-specific and cross-linguistic strategies during agreement computation - Evidence from Hindi</div>
+                <div>Pranab Bagartti & Samar Husain</div>
+                <div><em>Proceedings of the Annual Meeting of the Cognitive Science Society, 47.</em> (2025)</div>
+                <div style="margin-top: 5px;">
+                    <a href="https://escholarship.org/uc/item/2jm7w7p8" class="tag">Link</a>
+                </div>
+            </div>
+
+            <h3 style="font-size: 1.2rem; margin-top: 30px;">Selected Conference Presentations</h3>
+
+            <div class="pub-item">
+                <div class="pub-title">Does the number of noun feature mismatch impact Hindi agreement production errors?</div>
+                <div>Architecture and Mechanisms for Language Processing (AMLaP), University of Edinburgh. (Sept 2024)</div>
+                <span class="tag">Poster</span>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">The role of language-specific and universal constraints on agreement processing in Hindi production</div>
+                <div>Crosslinguistic Perspectives on Processing and Learning Workshop, Universität Zürich. (Sept 2024)</div>
+                <span class="tag">Talk</span>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Different underlying mechanisms lead to agreement attraction in production - Evidence from Hindi</div>
+                <div>The South Asian Forum on the Acquisition and Processing of Language, IIT Kanpur. (Dec 2023)</div>
+                <span class="tag">Talk</span>
+            </div>
+
+        </section>
     </div>
-  </div>
-</section>
+
 
 </body>
 </html>
