@@ -1,59 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <!-- Basic Page Needs    ------>
-  <meta charset="utf-8">
-  <title>Resources - Pranab Bagartti</title>
-  <meta name="description" content="Resources page - pranab bagartti's website">
-  <meta name="author" content="pranab bagartti">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - Pranab Bagartti</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-  <!-- Mobile Specific Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #fdfdfd;
+            --text-color: #333;
+            --light-gray: #ecf0f1;
+            --max-width: 900px;
+        }
 
-  <!-- FONT -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
-  <link rel="stylesheet" href="css/style.css">
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/jpg" href="images/iitd.png">
+        h1, h2, h3 {
+            font-family: 'Merriweather', serif;
+            color: var(--primary-color);
+            margin-bottom: 0.5em;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .nav-links a {
+            margin-left: 20px;
+            font-size: 0.95rem;
+            color: #555;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        /* --- Sections --- */
+        section {
+            padding: 40px 0;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--light-gray);
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            display: inline-block;
+        }
+
+        /* --- Resource Items --- */
+        .resource-category {
+            margin-bottom: 30px;
+        }
+
+        .resource-category h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .resource-item {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            border-left: 3px solid var(--light-gray);
+            padding-top: 6px;
+            padding-bottom: 6px;
+        }
+
+        .resource-item a {
+            font-weight: 600;
+        }
+
+        .resource-item .resource-desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 2px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            font-size: 0.85rem;
+            color: #888;
+            background-color: #f9f9f9;
+            margin-top: 40px;
+            border-top: 1px solid #eee;
+        }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 768px) {
+            .resource-item {
+                padding-left: 10px;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- Navigation Menu -->
-<nav class="navbar">
-  <div class="container">
-    <ul class="navbar-list">
-      <li class="navbar-item"><a class="navbar-link" href="index.html">Home</a></li>
-      <li class="navbar-item"><a class="navbar-link active" href="resources.html">Resources</a></li>
-
-    </ul>
-  </div>
-</nav>
-
-<section class="about">
-  <div class="container">
-    <h3>Resources</h3>
-    
-    <div class="row">
-      <div class="one-half column">
-        <strong>Experimental Tools:</strong>
-        <div class="content-text">
-          <ul>
-            <li><a href="resources/pcibex_local.html" style="color:DarkSlateBlue">Run pcIBEX locally</a></li>
-          </ul>
+    <nav>
+        <div class="container">
+            <div class="logo">Pranab Bagartti</div>
+            <div class="nav-links">
+                <a href="index.html">About</a>
+                <a href="index.html#education">Education</a>
+                <a href="index.html#research">Research</a>
+                <a href="resources.html">Resources</a>
+            </div>
         </div>
-      </div>
-     
+    </nav>
+
+    <div class="container">
+        <section>
+            <h2 class="section-title">Resources</h2>
+
+            <div class="resource-category">
+                <h3>Experimental Tools</h3>
+
+                <div class="resource-item">
+                    <a href="resources/pcibex_local.html"><i class="fas fa-flask"></i> Run PCIbex locally</a>
+                    <div class="resource-desc">Guide for setting up and running PCIbex experiments on your local machine.</div>
+                </div>
+            </div>
+
+        </section>
     </div>
-  </div>
-  <br>
-</section>
+
+    <footer>
+        <p>&copy; 2025 Pranab Bagartti. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
