@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hindi IAST LaTeX Cheatsheet - Pranab Bagartti</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #fafaf8;
+            --surface: #ffffff;
+            --text: #1a1a2e;
+            --text-secondary: #4a4a5a;
+            --accent: #2c5282;
+            --accent-light: #ebf2fa;
+            --border: #d4d4d8;
+            --border-light: #e8e8ec;
+            --code-bg: #f4f1ec;
+            --code-text: #9b2c2c;
+            --header-bg: #1a1a2e;
+            --header-text: #ffffff;
+            --row-alt: #f8f7f5;
+            --tag-bg: #e8e4dd;
+            --shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Source Serif 4', Georgia, serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+            font-size: 16px;
+        }
+
+        /* ── NAV ── */
+        nav {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 0.9rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            box-shadow: var(--shadow);
+        }
+        nav .site-name {
+            font-family: 'Source Sans 3', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text);
+            text-decoration: none;
+        }
+        nav .nav-links { display: flex; gap: 1.4rem; }
+        nav .nav-links a {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        nav .nav-links a:hover { color: var(--accent); }
+
+        /* ── MAIN ── */
+        main {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+
+        h1 {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 1.85rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.3rem;
+            letter-spacing: -0.01em;
+        }
+        .subtitle {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+        .meta {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+        }
+
+        h2 {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-top: 2.5rem;
+            margin-bottom: 0.9rem;
+            padding-bottom: 0.35rem;
+            border-bottom: 2px solid var(--border-light);
+        }
+        h2 .num {
+            color: var(--accent);
+            margin-right: 0.3rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* ── TABLES ── */
+        .table-wrap {
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+            border-radius: 6px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-light);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+        }
+        thead th {
+            background: var(--header-bg);
+            color: var(--header-text);
+            font-family: 'Source Sans 3', sans-serif;
+            font-weight: 600;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            padding: 0.65rem 0.85rem;
+            text-align: left;
+            white-space: nowrap;
+        }
+        tbody td {
+            padding: 0.55rem 0.85rem;
+            border-bottom: 1px solid var(--border-light);
+            vertical-align: middle;
+        }
+        tbody tr:nth-child(even) { background: var(--row-alt); }
+        tbody tr:hover { background: var(--accent-light); }
+
+        .iast { font-weight: 600; color: var(--text); }
+        .devanagari { font-size: 1.05em; }
+
+        code, .latex-code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.82rem;
+            background: var(--code-bg);
+            color: var(--code-text);
+            padding: 0.15em 0.4em;
+            border-radius: 3px;
+        }
+        td code {
+            background: transparent;
+            padding: 0;
+        }
+        .col-code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.82rem;
+            color: var(--code-text);
+        }
+
+        /* ── PREAMBLE BOX ── */
+        .preamble-box {
+            background: var(--code-bg);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+            border-radius: 4px;
+            padding: 1rem 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+        .preamble-box pre {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--text);
+            line-height: 1.7;
+            margin: 0;
+        }
+        .preamble-box .note {
+            font-family: 'Source Serif 4', serif;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 0.7rem;
+            line-height: 1.5;
+        }
+
+        /* ── TIPS ── */
+        .tips {
+            background: var(--surface);
+            border: 1px solid var(--border-light);
+            border-radius: 6px;
+            padding: 1.2rem 1.5rem;
+            margin-top: 2rem;
+            box-shadow: var(--shadow);
+        }
+        .tips h3 {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.7rem;
+        }
+        .tips ul {
+            list-style: none;
+            padding: 0;
+        }
+        .tips li {
+            padding: 0.35rem 0;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+        }
+        .tips li::before {
+            content: "→";
+            color: var(--accent);
+            font-weight: 700;
+            margin-right: 0.5rem;
+        }
+
+        /* ── GLOSS TABLE (double-width) ── */
+        .gloss-table td:nth-child(3),
+        .gloss-table td:nth-child(6) {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--code-text);
+        }
+        .gloss-table td:nth-child(4) {
+            border-left: 2px solid var(--border);
+        }
+
+        /* ── COPY BUTTON ── */
+        .copy-cell {
+            position: relative;
+            cursor: pointer;
+        }
+        .copy-cell:hover::after {
+            content: "click to copy";
+            position: absolute;
+            top: -1.6rem;
+            left: 0;
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.7rem;
+            background: var(--text);
+            color: white;
+            padding: 0.15em 0.5em;
+            border-radius: 3px;
+            white-space: nowrap;
+        }
+        .copied::after {
+            content: "copied!" !important;
+            background: #276749 !important;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border-light);
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 640px) {
+            main { padding: 1.5rem 1rem; }
+            h1 { font-size: 1.5rem; }
+            table { font-size: 0.8rem; }
+            thead th, tbody td { padding: 0.45rem 0.55rem; }
+            nav { padding: 0.7rem 1rem; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a class="site-name" href="https://pranabbagartti.github.io/">Pranab Bagartti</a>
+    <div class="nav-links">
+        <a href="https://pranabbagartti.github.io/index.html">About</a>
+        <a href="https://pranabbagartti.github.io/index.html#education">Education</a>
+        <a href="https://pranabbagartti.github.io/index.html#research">Research</a>
+        <a href="https://pranabbagartti.github.io/resources.html">Resources</a>
+    </div>
+</nav>
+
+<main>
+    <h1>Hindi/Urdu IAST Transliteration in LaTeX</h1>
+    <p class="subtitle">A cheatsheet for linguists working with Hindi interlinear glosses in pdfLaTeX and XeLaTeX</p>
+    <p class="meta">Pranab Bagartti · 2026</p>
+
+    <!-- REQUIRED PACKAGES -->
+    <h2><span class="num">§</span> Required Packages</h2>
+    <div class="preamble-box">
+        <pre>\usepackage[T1]{fontenc}
+\usepackage{lmodern}</pre>
+        <div class="note">
+            These two are sufficient. The accent commands below are built into base LaTeX — no extra package needed.
+            Do <strong>not</strong> load <code>tipa</code> unless you need IPA symbols elsewhere (it can conflict).
+            Do <strong>not</strong> load <code>inputenc</code> with XeLaTeX.
+        </div>
+    </div>
+
+    <!-- 1. VOWELS -->
+    <h2><span class="num">1.</span> Vowels</h2>
+    <div class="table-wrap">
+    <table>
+        <thead><tr><th>Hindi</th><th>IAST</th><th>LaTeX command</th><th>Example</th><th>LaTeX code</th></tr></thead>
+        <tbody>
+            <tr><td class="devanagari">अ</td><td class="iast">a</td><td class="col-code">a <span style="color:#888">(plain)</span></td><td>ab (now)</td><td class="col-code copy-cell" onclick="copyCode(this)">ab</td></tr>
+            <tr><td class="devanagari">आ</td><td class="iast">ā</td><td class="col-code">\=a</td><td>āb (come!)</td><td class="col-code copy-cell" onclick="copyCode(this)">\=ab</td></tr>
+            <tr><td class="devanagari">इ</td><td class="iast">i</td><td class="col-code">i <span style="color:#888">(plain)</span></td><td>is (this)</td><td class="col-code copy-cell" onclick="copyCode(this)">is</td></tr>
+            <tr><td class="devanagari">ई</td><td class="iast">ī</td><td class="col-code">\=\i &nbsp;or&nbsp; \={\i}</td><td>kī (of)</td><td class="col-code copy-cell" onclick="copyCode(this)">k\=\i</td></tr>
+            <tr><td class="devanagari">उ</td><td class="iast">u</td><td class="col-code">u <span style="color:#888">(plain)</span></td><td>un (those)</td><td class="col-code copy-cell" onclick="copyCode(this)">un</td></tr>
+            <tr><td class="devanagari">ऊ</td><td class="iast">ū</td><td class="col-code">\=u</td><td>kūn (who?)</td><td class="col-code copy-cell" onclick="copyCode(this)">k\=un</td></tr>
+            <tr><td class="devanagari">ए</td><td class="iast">e</td><td class="col-code">e <span style="color:#888">(plain)</span></td><td>ek (one)</td><td class="col-code copy-cell" onclick="copyCode(this)">ek</td></tr>
+            <tr><td class="devanagari">ऐ</td><td class="iast">ai</td><td class="col-code">ai <span style="color:#888">(plain)</span></td><td>aisā (such)</td><td class="col-code copy-cell" onclick="copyCode(this)">ais\=a</td></tr>
+            <tr><td class="devanagari">ओ</td><td class="iast">o</td><td class="col-code">o <span style="color:#888">(plain)</span></td><td>or (and)</td><td class="col-code copy-cell" onclick="copyCode(this)">or</td></tr>
+            <tr><td class="devanagari">औ</td><td class="iast">au</td><td class="col-code">au <span style="color:#888">(plain)</span></td><td>aur (and)</td><td class="col-code copy-cell" onclick="copyCode(this)">aur</td></tr>
+        </tbody>
+    </table>
+    </div>
+
+    <!-- 2. RETROFLEX -->
+    <h2><span class="num">2.</span> Retroflex Consonants (underdot)</h2>
+    <div class="table-wrap">
+    <table>
+        <thead><tr><th>Hindi</th><th>IAST</th><th>LaTeX command</th><th>Example</th><th>LaTeX code</th></tr></thead>
+        <tbody>
+            <tr><td class="devanagari">ट</td><td class="iast">ṭ</td><td class="col-code">\d{t}</td><td>ṭopī (cap)</td><td class="col-code copy-cell" onclick="copyCode(this)">\d{t}op\=\i</td></tr>
+            <tr><td class="devanagari">ठ</td><td class="iast">ṭh</td><td class="col-code">\d{t}h</td><td>ṭhīk (fine)</td><td class="col-code copy-cell" onclick="copyCode(this)">\d{t}h\=\ik</td></tr>
+            <tr><td class="devanagari">ड</td><td class="iast">ḍ</td><td class="col-code">\d{d}</td><td>laḍkā (boy)</td><td class="col-code copy-cell" onclick="copyCode(this)">la\d{d}k\=a</td></tr>
+            <tr><td class="devanagari">ढ</td><td class="iast">ḍh</td><td class="col-code">\d{d}h</td><td>ḍher (heap)</td><td class="col-code copy-cell" onclick="copyCode(this)">\d{d}her</td></tr>
+            <tr><td class="devanagari">ण</td><td class="iast">ṇ</td><td class="col-code">\d{n}</td><td>bāṇ (arrow)</td><td class="col-code copy-cell" onclick="copyCode(this)">b\=a\d{n}</td></tr>
+            <tr><td class="devanagari">ड़</td><td class="iast">ṛ</td><td class="col-code">\d{r}</td><td>paṛh (read)</td><td class="col-code copy-cell" onclick="copyCode(this)">pa\d{r}h</td></tr>
+        </tbody>
+    </table>
+    </div>
+
+    <!-- 3. NASALS -->
+    <h2><span class="num">3.</span> Nasalized Vowels &amp; Nasal Consonants</h2>
+    <div class="table-wrap">
+    <table>
+        <thead><tr><th>Type</th><th>IAST</th><th>LaTeX command</th><th>Example</th><th>LaTeX code</th></tr></thead>
+        <tbody>
+            <tr><td>Nasalized vowel</td><td class="iast">ā̃ (tilde)</td><td class="col-code">\~{\=a}</td><td>hā̃ (yes)</td><td class="col-code copy-cell" onclick="copyCode(this)">h\~{\=a}</td></tr>
+            <tr><td>Chandrabindu on ī</td><td class="iast">ī̃</td><td class="col-code">\~{\=\i}</td><td>nahī̃ (no)</td><td class="col-code copy-cell" onclick="copyCode(this)">nah\~{\=\i}</td></tr>
+            <tr><td>Anusvara (dot)</td><td class="iast">ṃ</td><td class="col-code">\d{m}</td><td>haṃs (swan)</td><td class="col-code copy-cell" onclick="copyCode(this)">ha\d{m}s</td></tr>
+            <tr><td>Anunasika (overdot)</td><td class="iast">ṅ</td><td class="col-code">\.{n}</td><td>aṅg (limb)</td><td class="col-code copy-cell" onclick="copyCode(this)">a\.{n}g</td></tr>
+            <tr><td>Retroflex nasal</td><td class="iast">ṇ</td><td class="col-code">\d{n}</td><td>laḍkiyāṇ (girls)</td><td class="col-code copy-cell" onclick="copyCode(this)">la\d{d}kiy\=a\d{n}</td></tr>
+        </tbody>
+    </table>
+    </div>
+
+    <!-- 4. SIBILANTS -->
+    <h2><span class="num">4.</span> Sibilants &amp; Special Consonants</h2>
+    <div class="table-wrap">
+    <table>
+        <thead><tr><th>Hindi</th><th>IAST</th><th>LaTeX command</th><th>Example</th><th>LaTeX code</th></tr></thead>
+        <tbody>
+            <tr><td class="devanagari">श</td><td class="iast">ś (s + acute)</td><td class="col-code">\'s &nbsp;or&nbsp; \'{s}</td><td>śor (noise)</td><td class="col-code copy-cell" onclick="copyCode(this)">\'sor</td></tr>
+            <tr><td class="devanagari">ष</td><td class="iast">ṣ (s + underdot)</td><td class="col-code">\d{s}</td><td>doṣ (fault)</td><td class="col-code copy-cell" onclick="copyCode(this)">do\d{s}</td></tr>
+            <tr><td class="devanagari">स</td><td class="iast">s</td><td class="col-code">s <span style="color:#888">(plain)</span></td><td>sab (all)</td><td class="col-code copy-cell" onclick="copyCode(this)">sab</td></tr>
+            <tr><td class="devanagari">ह</td><td class="iast">h</td><td class="col-code">h <span style="color:#888">(plain)</span></td><td>hai (is)</td><td class="col-code copy-cell" onclick="copyCode(this)">hai</td></tr>
+        </tbody>
+    </table>
+    </div>
+
+    <!-- 5. ALL ACCENTS -->
+    <h2><span class="num">5.</span> Complete LaTeX Accent Command Reference</h2>
+    <div class="table-wrap">
+    <table>
+        <thead><tr><th>Accent name</th><th>Command</th><th>Example</th><th>Result</th></tr></thead>
+        <tbody>
+            <tr><td>Macron (long vowel)</td><td class="col-code">\={}</td><td class="col-code">\=a, \=\i, \=u</td><td class="iast">ā, ī, ū</td></tr>
+            <tr><td>Underdot (retroflex)</td><td class="col-code">\d{}</td><td class="col-code">\d{d}, \d{t}, \d{n}</td><td class="iast">ḍ, ṭ, ṇ</td></tr>
+            <tr><td>Overdot</td><td class="col-code">\.{}</td><td class="col-code">\.{n}, \.{m}</td><td class="iast">ṅ, ṁ</td></tr>
+            <tr><td>Acute accent</td><td class="col-code">\'{}</td><td class="col-code">\'s, \'c</td><td class="iast">ś, ć</td></tr>
+            <tr><td>Tilde (nasalization)</td><td class="col-code">\~{}</td><td class="col-code">\~a, \~{\=a}</td><td class="iast">ã, ā̃</td></tr>
+            <tr><td>Caron / háček</td><td class="col-code">\v{}</td><td class="col-code">\v{s}, \v{c}</td><td class="iast">š, č</td></tr>
+            <tr><td>Breve</td><td class="col-code">\u{}</td><td class="col-code">\u{a}</td><td class="iast">ă</td></tr>
+            <tr><td>Cedilla</td><td class="col-code">\c{}</td><td class="col-code">\c{c}, \c{s}</td><td class="iast">ç, ş</td></tr>
+            <tr><td>Ring above</td><td class="col-code">\r{}</td><td class="col-code">\r{a}</td><td class="iast">å</td></tr>
+            <tr><td>Combining accents</td><td class="col-code">nest {}</td><td class="col-code">\~{\=a}</td><td class="iast">ā̃ (tilde on macron)</td></tr>
+        </tbody>
+    </table>
+    </div>
+
+    <!-- 6. GLOSSING -->
+    <h2><span class="num">6.</span> Standard Glossing Abbreviations</h2>
+    <div class="table-wrap">
+    <table class="gloss-table">
+        <thead><tr><th>Abbr</th><th>Meaning</th><th>LaTeX</th><th>Abbr</th><th>Meaning</th><th>LaTeX</th></tr></thead>
+        <tbody>
+            <tr><td><strong>NOM</strong></td><td>nominative</td><td class="col-code">\textsc{nom}</td><td><strong>ACC</strong></td><td>accusative</td><td class="col-code">\textsc{acc}</td></tr>
+            <tr><td><strong>ERG</strong></td><td>ergative</td><td class="col-code">\textsc{erg}</td><td><strong>DAT</strong></td><td>dative</td><td class="col-code">\textsc{dat}</td></tr>
+            <tr><td><strong>GEN</strong></td><td>genitive</td><td class="col-code">\textsc{gen}</td><td><strong>INS</strong></td><td>instrumental</td><td class="col-code">\textsc{ins}</td></tr>
+            <tr><td><strong>M</strong></td><td>masculine</td><td class="col-code">\textsc{m}</td><td><strong>F</strong></td><td>feminine</td><td class="col-code">\textsc{f}</td></tr>
+            <tr><td><strong>SG</strong></td><td>singular</td><td class="col-code">\textsc{sg}</td><td><strong>PL</strong></td><td>plural</td><td class="col-code">\textsc{pl}</td></tr>
+            <tr><td><strong>PROG</strong></td><td>progressive</td><td class="col-code">\textsc{prog}</td><td><strong>PERF</strong></td><td>perfective</td><td class="col-code">\textsc{perf}</td></tr>
+            <tr><td><strong>PAST</strong></td><td>past</td><td class="col-code">\textsc{past}</td><td><strong>PRES</strong></td><td>present</td><td class="col-code">\textsc{pres}</td></tr>
+            <tr><td><strong>FUT</strong></td><td>future</td><td class="col-code">\textsc{fut}</td><td><strong>IMPF</strong></td><td>imperfective</td><td class="col-code">\textsc{impf}</td></tr>
+            <tr><td><strong>HAB</strong></td><td>habitual</td><td class="col-code">\textsc{hab}</td><td><strong>CAUS</strong></td><td>causative</td><td class="col-code">\textsc{caus}</td></tr>
+            <tr><td><strong>NEG</strong></td><td>negative</td><td class="col-code">\textsc{neg}</td><td><strong>COP</strong></td><td>copula</td><td class="col-code">\textsc{cop}</td></tr>
+        </tbody>
+    </table>
+    </div>
+
+    <!-- 7. COMMON WORDS -->
+    <h2><span class="num">7.</span> Common Hindi Words in Syntax Examples</h2>
+    <div class="table-wrap"
